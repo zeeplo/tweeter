@@ -22,11 +22,13 @@ body {
 }
 
 .container {
-  padding-left: 5%;
-  padding-right: 5%;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 

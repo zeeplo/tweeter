@@ -3,6 +3,7 @@
 const userHelper    = require("../lib/util/user-helper")
 
 const express       = require('express');
+const app = express();
 const tweetsRoutes  = express.Router();
 
 module.exports = function(DataHelpers) {
@@ -43,4 +44,4 @@ module.exports = function(DataHelpers) {
 
   return tweetsRoutes;
 
-}
+};
