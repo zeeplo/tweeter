@@ -1,10 +1,7 @@
-header {
+.header-container {
   height: 400px;
   width: 100%;
   background-image: url("../images/clean-gray-paper.png") ;
-}
-
-.header-container {
   background-color: orange;
   display: flex;
   flex-direction: column;

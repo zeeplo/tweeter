@@ -8,6 +8,10 @@
   resize: none;
 }
 
+.new-tweet {
+  margin-bottom: 2em;
+}
+
 form > label {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
