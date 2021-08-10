@@ -34,6 +34,12 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+
+    <!-- jQuery  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- import composer-char-count.js -->
+    <script src="./scripts/composer-char-count.js"></script>
   </head>
 
   <body>
@@ -64,7 +70,7 @@
 	  <!-- <label for="tweet-text">What are you humming about?</label> -->
 	  <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
 	  <div class="btn-container">
-	    <button type="submit">Tweet</button>
+	    <button type="submit" id="btn">Tweet</button>
 	    <output name="counter" class="counter" for="tweet-text">140</output>
 	  </div>
 	</form>
