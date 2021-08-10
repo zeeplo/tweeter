@@ -8,6 +8,11 @@
   resize: none;
 }
 
+form > label {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+}
+
 button {
   font-family: 'Bungee';
   color: white;
