@@ -4,31 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
-
 /**
  * Loops throug the array of tweet objects, appending HTML string into #tweets-container
  * @param {Array} tweets
@@ -64,10 +39,13 @@ const createTweetElement = (tweet) => {
   return tweetContainer;
 };
 
+const loadtweets = () => {
+  $.get('/tweets', function(data) {
+    renderTweets(data.reverse());
+  });
+};
 
-
-$(document).ready(() => {
-  renderTweets(data);
+const postTweet = () => {
   $('#new-tweet-form').submit(function(event) {
     event.preventDefault();
     $.post('/tweets/', $(this).serialize())
@@ -75,4 +53,9 @@ $(document).ready(() => {
         console.log('Tweet Posted');
       });
   });
+};
+
+$(document).ready(function() {
+  loadtweets();
+  postTweet();
 });
