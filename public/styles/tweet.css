@@ -1,47 +1,47 @@
-.tweet-container {
+#tweet-container {
   font-family: 'Source Sans Pro', sans-serif;
   padding-bottom: 30px;
 }
 
-article.tweet {
+#tweet-container article{
   display:flex;
   flex-direction: column;
   border: 4px solid #666768;
   padding: 20px;
 }
 
-article.tweet:hover {
+#tweet-container article:hover {
   box-shadow: 6px 5px #CDCDCD;
 }
 
-article.tweet header {
+#tweet-container article header {
   display: flex;
   justify-content: space-between;
 }
 
-article div {
+#tweet-container article div {
   padding: 20px;
 }
 
-article div.content {
+#tweet-container article div.content {
   padding-top: 1.5em;
   font-weight: 600;
   border-left: 20px;
   border-bottom: 3px solid #666768;
 }
 
-article footer i.fas {
+#tweet-container article footer i.fas {
   font-size: 16pt;
   padding-right: 10px;
   color: #3333A2;
 }
 
-article footer i.fas:hover {
+#tweet-container article footer i.fas:hover {
   color: #FFA333;
 }
 
 
-article.tweet footer {
+#tweet-container article footer {
   display: flex;
   justify-content: space-between;
   font-size: 12pt;
