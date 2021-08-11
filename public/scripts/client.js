@@ -5,37 +5,45 @@
  */
 
 const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
     },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  }
 ];
 
+/**
+ * Loops throug the array of tweet objects, appending HTML string into #tweets-container
+ * @param {Array} tweets
+ */
 const renderTweets = (tweets) => {
   for (let i of tweets) {
     $('#tweets-container').append(createTweetElement(i));
   }
 };
 
-
+/**
+ * Change the Tweet object into HTML
+ * @param {object} tweet
+ * @returns {string}
+ */
 const createTweetElement = (tweet) => {
   const tweetContainer =
 	`<article>
@@ -57,10 +65,14 @@ const createTweetElement = (tweet) => {
 };
 
 
+
 $(document).ready(() => {
   renderTweets(data);
   $('#new-tweet-form').submit(function(event) {
     event.preventDefault();
-    const serializedContent = $(this).serialize();
+    $.post('/tweets/', $(this).serialize())
+      .done(() => {
+        console.log('Tweet Posted');
+      });
   });
 });
