@@ -9,6 +9,7 @@
  * @param {Array} tweets
  */
 const renderTweets = (tweets) => {
+  $('#tweets-container').empty(); // Need to empty the section everytime it renders, otherwise every refresh the content will just be appended instead of rendering on a fresh section
   for (let i of tweets) {
     $('#tweets-container').append(createTweetElement(i));
   }
@@ -40,9 +41,10 @@ const createTweetElement = (tweet) => {
 };
 
 const loadtweets = () => {
-  $.get('/tweets', function(data) {
-    renderTweets(data.reverse());
-  });
+  $.get('/tweets/')
+    .done((data) => {
+      renderTweets(data.reverse());
+    });
 };
 
 
@@ -61,7 +63,7 @@ const postTweet = () => {
     } else {
       $.post('/tweets/', $(this).serialize())
         .done(() => {
-          console.log('Tweet Posted');
+          loadtweets();
         });
     }
   });
