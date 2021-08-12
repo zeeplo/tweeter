@@ -77,7 +77,6 @@ const postTweet = () => {
           loadtweets();
         });
     }
-    
   });
 };
 

@@ -1,5 +1,6 @@
 nav {
-  background-color: #4056A1;
+  background-image: url("../images/clean-gray-paper.png") ;
+  background-color: orange;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -30,4 +31,11 @@ nav span {
 
 nav .fa-angle-double-down {
   color: red;
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    background-color: #4056A1;
+    background-image: none;
+  }
 }
