@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -61,15 +62,22 @@ const postTweet = () => {
     event.preventDefault();
 
     if ($('#tweet-text').val().length === 0) {
-      alert("Can't post nothing");
+      $('#input-err').html(function() {
+        $(this).slideDown('slow');
+        return '<p><i class="fas fa-times"></i>    You can\'t tweet nothing</p>';
+      });
     } else if ($('#tweet-text').val().length > 140) {
-      alert('You are over the 140 limit');
+      $('#input-err').html(function() {
+        $(this).slideDown('slow');
+        return '<p><i class="fas fa-times"></i>    You are over the 140 limit</p>';
+      });
     } else {
       $.post('/tweets/', $(this).serialize())
         .done(() => {
           loadtweets();
         });
     }
+    
   });
 };
 
