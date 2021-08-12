@@ -59,5 +59,6 @@
 
 #tweets-container div.handle {
   font-weight: 600;
+  word-break: break-all;
   color: gray;
 }
