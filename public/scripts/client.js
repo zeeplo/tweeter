@@ -10,7 +10,7 @@
  * @param {Array} tweets
  */
 const renderTweets = (tweets) => {
-  $('#tweets-container').empty(); // Need to empty the section everytime it renders, otherwise every refresh the content will just be appended instead of rendering on a fresh section
+  $('#tweets-container').empty(); // Need to empty the section everytime it renders, otherwise every refresh the content will just append to old content instead of making new content
   for (let i of tweets) {
     $('#tweets-container').append(createTweetElement(i));
   }
@@ -61,6 +61,7 @@ const postTweet = () => {
 
     event.preventDefault();
 
+    // input validation
     if ($('#tweet-text').val().length === 0) {
       $('#input-err').html(function() {
         $(this).slideDown('slow');
