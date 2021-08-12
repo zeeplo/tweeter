@@ -17,6 +17,7 @@
 #tweets-container article header {
   display: flex;
   justify-content: space-between;
+  align-content: center;
 }
 
 #tweets-container article div {
@@ -51,6 +52,7 @@
 #tweets-container article div.user-name {
   display: flex;
   align-items: center;
+  word-break: break-all;
 }
 
 #tweets-container div.user-name span {
@@ -59,6 +61,17 @@
 
 #tweets-container div.handle {
   font-weight: 600;
+  align-self: center;
   word-break: break-all;
   color: gray;
+}
+
+@media screen and (max-width: 680px) {
+  #tweets-container article header {
+    display: flex;
+    flex-direction: column;
+  }
+  #tweets-container article div.user-name {
+    flex-direction: column;
+  }
 }
