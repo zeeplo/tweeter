@@ -27,7 +27,7 @@ const createTweetElement = (tweet) => {
 	    <div class="user-name"><img src="${tweet.user.avatars}"> <span>${tweet.user.name}</span></div>
 	    <div class="handle">${tweet.user.handle}</div>
 	  </header>
-	  <div class="content">${tweet.content.text}</div>
+	  <div class="content">${escape(tweet.content.text)}</div>
 	  <footer>
 	    <div>${timeago.format(tweet.created_at)}</div>
 	    <div class="icons">
@@ -40,6 +40,9 @@ const createTweetElement = (tweet) => {
   return tweetContainer;
 };
 
+/**
+ * Loads the tweet from the database
+ */
 const loadtweets = () => {
   $.get('/tweets/')
     .done((data) => {
@@ -54,6 +57,7 @@ const loadtweets = () => {
  */
 const postTweet = () => {
   $('#new-tweet-form').submit(function(event) {
+
     event.preventDefault();
 
     if ($('#tweet-text').val().length === 0) {
@@ -67,6 +71,15 @@ const postTweet = () => {
         });
     }
   });
+};
+
+/**
+ * Escapes user input to avoid XSS attacks
+ */
+const escape = (str) => {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 };
 
 $(document).ready(function() {

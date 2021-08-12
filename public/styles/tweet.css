@@ -29,6 +29,7 @@
   font-weight: 600;
   border-left: 20px;
   border-bottom: 3px solid #666768;
+  overflow-wrap: break-word;
 }
 
 #tweets-container article footer i.fas {
