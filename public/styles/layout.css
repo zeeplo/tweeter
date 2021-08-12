@@ -31,6 +31,17 @@ main {
   flex-direction: column;
 }
 
+@media screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 150px;
+  }
+  main.container {
+  }
+    
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

@@ -37,9 +37,10 @@ button {
 }
 
 #input-err:empty {
+  border-color: transparent;
+  border: 0;
   padding: 0;
   margin-top: 0;
-  border-color: transparent;
 }
 
 #input-err {
@@ -51,3 +52,8 @@ button {
   border: 3px solid red;
 }
 
+@media screen and (min-width: 1024px) {
+  .new-tweet h2 {
+    margin-top: 0;
+  }
+}
