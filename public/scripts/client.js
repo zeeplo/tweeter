@@ -45,13 +45,25 @@ const loadtweets = () => {
   });
 };
 
+
+/**
+ * Post the tweet into the database
+ * If there is nothing in the tweet or the tweet is over 140 characters, the tweet will not go through
+ */
 const postTweet = () => {
   $('#new-tweet-form').submit(function(event) {
     event.preventDefault();
-    $.post('/tweets/', $(this).serialize())
-      .done(() => {
-        console.log('Tweet Posted');
-      });
+
+    if ($('#tweet-text').val().length === 0) {
+      alert("Can't post nothing");
+    } else if ($('#tweet-text').val().length > 140) {
+      alert('You are over the 140 limit');
+    } else {
+      $.post('/tweets/', $(this).serialize())
+        .done(() => {
+          console.log('Tweet Posted');
+        });
+    }
   });
 };
 
