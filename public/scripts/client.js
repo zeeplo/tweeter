@@ -72,6 +72,10 @@ const postTweet = () => {
         return '<p><i class="fas fa-times"></i>    You are over the 140 limit</p>';
       });
     } else {
+      //error message will slide up if the tweet is valid
+      $('#input-err').slideUp('fast');
+      $('#input-err').empty();
+
       $.post('/tweets/', $(this).serialize())
         .done(() => {
           loadtweets();
