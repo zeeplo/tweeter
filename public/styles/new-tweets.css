@@ -17,7 +17,7 @@ form > label {
   font-weight: 600;
 }
 
-button {
+#btnTweet {
   font-family: 'Bungee';
   color: white;
   background-color: #4056A1;

@@ -94,7 +94,17 @@ const escape = (str) => {
   return div.innerHTML;
 };
 
+/**
+ * Toggle new-tweets to show and hide
+ */
+const toggleNewTweets = () => {
+  $('#write-new-tweet').click(function() {
+    $('.new-tweet').toggle("slow");
+  });
+};
+
 $(document).ready(function() {
   loadtweets();
   postTweet();
+  toggleNewTweets();
 });

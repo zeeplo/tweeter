@@ -18,9 +18,13 @@ nav span {
   font-size: 1.5em;
 }
 
-.write-new-tweet {
+#write-new-tweet {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1em;
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  display: inline-block;
 }
 
 .nav-container {
@@ -34,7 +38,7 @@ nav .fa-angle-double-down {
 }
 
 /* Desktop */
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
   nav {
     background-color: #3a0ca3;
     background-image: none;
