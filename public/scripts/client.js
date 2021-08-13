@@ -99,7 +99,7 @@ const escape = (str) => {
  */
 const toggleNewTweets = () => {
   $('#write-new-tweet').click(function() {
-    $('.new-tweet').toggle("slow");
+    $('.new-tweet').slideToggle("slow");
   });
 };
 
