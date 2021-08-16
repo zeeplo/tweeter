@@ -103,6 +103,19 @@ const toggleNewTweets = () => {
   });
 };
 
+/**
+ * go-top hides on default, when the window is scrolled the button appears. It dissapears again after 5 seconds of not scrolling
+ */
+const goTopScroll = () => {
+  $('#go-top').hide();
+  $(window).scroll(function() {
+    $('#go-top').show().delay(5000).fadeOut();
+  })
+};
+
+/**
+ * When the go-top link is clicked, it will scroll to the top and make sure that .new-tweet shows
+ */
 const goTop = () => {
   $('#go-top').click(function() {
     $('.new-tweet').show();
@@ -113,5 +126,6 @@ $(document).ready(function() {
   loadtweets();
   postTweet();
   toggleNewTweets();
+  goTopScroll();
   goTop();
 });
