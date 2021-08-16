@@ -103,8 +103,15 @@ const toggleNewTweets = () => {
   });
 };
 
+const goTop = () => {
+  $('#go-top').click(function() {
+    $('.new-tweet').show();
+  });
+};
+
 $(document).ready(function() {
   loadtweets();
   postTweet();
   toggleNewTweets();
+  goTop();
 });
