@@ -44,8 +44,8 @@
     <nav>
       <span>tweeter</span>
       <div class="nav-container">
-	<button id="write-new-tweet"><strong>Write</strong> a new Tweet</span></button>
-	<i class="fas fa-angle-double-down"></i>
+	    <button id="write-new-tweet"><strong>Write</strong> a new Tweet</span></button>
+	    <i class="fas fa-angle-double-down"></i>
     </nav>
 
     <header id="header-container">
@@ -62,15 +62,15 @@
     <main class="container">
       <div id="input-err"></div>
       <section class="new-tweet">
-	<h2>Compose Tweet</h2>
-	<form id="new-tweet-form" action="/tweets/" method="POST">
-	  <label for="tweet-text">What are you humming about?</label>
-	  <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-	  <div class="btn-container">
-	    <button type="submit" id="btnTweet">Tweet</button>
-	    <output name="counter" class="counter" for="tweet-text">140</output>
-	  </div>
-	</form>
+	      <h2>Compose Tweet</h2>
+	      <form id="new-tweet-form" action="/tweets/" method="POST">
+	        <label for="tweet-text">What are you humming about?</label>
+	        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+	        <div class="btn-container">
+	          <button type="submit" id="btnTweet">Tweet</button>
+	          <output name="counter" class="counter" for="tweet-text">140</output>
+	        </div>
+	      </form>
       </section>
       <section id="tweets-container"></section>
       <a id="go-top" href="#"><i class="fas fa-angle-double-up"></i></a>

@@ -1,5 +1,8 @@
-#tweet-text {
-  font-family: 'Source Sans Pro', sans-serif;
+section.new-tweet {
+  margin-bottom: 2em;
+}
+section.new-tweet #tweet-text {
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
   background-color: #f4f1ec;
   border: none;
@@ -7,40 +10,29 @@
   width: 100%;
   resize: none;
 }
-
-.new-tweet {
-  margin-bottom: 2em;
-}
-
-form > label {
-  font-family: 'Source Sans Pro', sans-serif;
+section.new-tweet #new-tweet-form label {
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
 }
-
-#btnTweet {
-  font-family: 'Bungee';
+section.new-tweet #btnTweet {
+  font-family: "Bungee";
   color: white;
-  background-color: #4056A1;
+  background-color: #4056a1;
 }
-
-.counter {
-  font-family: 'Bungee';
-}
-
-.counter.negative {
-  color: red;
-}
-
-.btn-container {
+section.new-tweet .btn-container {
   display: flex;
   justify-content: space-between;
 }
-
-#input-err:empty {
-  border-color: transparent;
-  border: 0;
-  padding: 0;
-  margin-top: 0;
+section.new-tweet .btn-container .counter {
+  font-family: "Bungee";
+}
+section.new-tweet .btn-container .counter.negative {
+  color: red;
+}
+@media screen and (min-width: 1024px) {
+  section.new-tweet h2 {
+    margin-top: 0;
+  }
 }
 
 #input-err {
@@ -51,9 +43,9 @@ form > label {
   color: red;
   border: 3px solid red;
 }
-
-@media screen and (min-width: 1024px) {
-  .new-tweet h2 {
-    margin-top: 0;
-  }
+#input-err:empty {
+  border-color: transparent;
+  border: 0;
+  padding: 0;
+  margin-top: 0;
 }

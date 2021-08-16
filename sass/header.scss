@@ -8,15 +8,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-#header-container img {
-  width: 100%;
-  height: auto;
-}
-@media screen and (min-width: 1024px) {
-  #header-container {
-    width: 30%;
-    margin-top: 0px;
-    border-radius: 25% 10%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media screen and (min-width: 1024px) {
+    & {
+      width: 30%;
+      margin-top: 0px;
+      border-radius: 25% 10%;
+    }
   }
 }

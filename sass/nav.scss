@@ -1,0 +1,56 @@
+nav {
+  background-image: url("../images/diagmonds-light.png") ;
+  background-color: #4895ef;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  span {
+    font-family: 'Bungee';
+    font-size: 1.5em;
+  }
+  
+  #write-new-tweet {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1em;
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    display: inline-block;
+  }
+  
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .fa-angle-double-down {
+    color: red;
+  }
+
+  /* Desktop */
+  @media screen and (min-width: 1024px) {
+    background-color: #3a0ca3;
+    background-image: none;
+  }
+  
+  /* remove write-new-tweet text when screen is smaller than 470px */
+  @media screen and (max-width: 470px) {
+    .write-new-tweet {
+      display: none;
+    }
+    .nav-container i.fa-angle-double-down {
+      display: none;
+    }
+  }
+}
+
+
